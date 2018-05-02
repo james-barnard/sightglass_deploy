@@ -1,0 +1,60 @@
+Started GET "/api/programs" for 127.0.0.1 at 2018-05-02 13:14:21 -0500
+Started GET "/api/test_runs" for 127.0.0.1 at 2018-05-02 13:14:22 -0500
+Started GET "/api/components/" for 127.0.0.1 at 2018-05-02 13:14:22 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestRunController#index as */*
+Processing by ComponentController#index as */*
+  [1m[36mTestRun Load (0.8ms)[0m  [1m[34mSELECT id, id key, id value, program_id, datetime(started_at,'unixepoch') text FROM "test_runs" ORDER BY key desc[0m
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components"."id", "components"."name" FROM "components"[0m
+Completed 200 OK in 100ms (Views: 10.7ms | ActiveRecord: 2.6ms)
+
+
+Processing by ProgramController#index as */*
+Completed 200 OK in 215ms (Views: 172.1ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT id, id key, id value, purpose text FROM "programs"[0m
+Completed 200 OK in 119ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/test_runs" for 127.0.0.1 at 2018-05-02 13:21:24 -0500
+Started GET "/api/components/" for 127.0.0.1 at 2018-05-02 13:21:24 -0500
+Started GET "/api/programs" for 127.0.0.1 at 2018-05-02 13:21:24 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ComponentController#index as */*
+  [1m[36mComponent Load (0.2ms)[0m  [1m[34mSELECT "components"."id", "components"."name" FROM "components"[0m
+Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 1.2ms)
+
+
+Processing by ProgramController#index as */*
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT id, id key, id value, purpose text FROM "programs"[0m
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Processing by TestRunController#index as */*
+  [1m[36mTestRun Load (1.5ms)[0m  [1m[34mSELECT id, id key, id value, program_id, datetime(started_at,'unixepoch') text FROM "test_runs" ORDER BY key desc[0m
+Completed 200 OK in 111ms (Views: 69.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/programs" for 127.0.0.1 at 2018-05-02 13:21:27 -0500
+Processing by ProgramController#index as */*
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT id, id key, id value, purpose text FROM "programs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/test_runs" for 127.0.0.1 at 2018-05-02 13:21:27 -0500
+Processing by TestRunController#index as */*
+  [1m[36mTestRun Load (0.8ms)[0m  [1m[34mSELECT id, id key, id value, program_id, datetime(started_at,'unixepoch') text FROM "test_runs" ORDER BY key desc[0m
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/components/" for 127.0.0.1 at 2018-05-02 13:21:27 -0500
+Processing by ComponentController#index as */*
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components"."id", "components"."name" FROM "components"[0m
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
