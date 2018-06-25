@@ -28,14 +28,14 @@ class TestRun < ApplicationRecord
   end
 
   def test_run_info
-    # todo is this necessary?  start_string = started_at
     {
       test_run_id: id,
       program_id: program.id,
       purpose: program.purpose,
       started_at: Time.at(started_at).strftime("%B %e, %Y, %I:%M %p"),
       completed_at: completed_at_time,
-      status_final: status
+      status_final: status,
+      step_final: last_step_attempted
     }
   end
 
@@ -56,7 +56,8 @@ class TestRun < ApplicationRecord
       (step_status.first.started_at - start_time)*1000,
       (step_status.last.started_at - start_time)*1000,
       step_status.first.step_id.to_s,
-      build_step_info(step_status)
+      build_step_info(step_status),
+      sequence_number
     ]
   end
 
@@ -116,4 +117,8 @@ class TestRun < ApplicationRecord
     end
   end
 
+  def last_step_attempted
+    return "" unless step_statuses.count > 0
+    step_statuses.order(:id).last.step.sequence_number
+  end
 end
